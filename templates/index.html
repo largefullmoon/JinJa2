@@ -72,8 +72,8 @@
               {% endfor %}
             </div>
             <a href="{{ performer.chat_url }}" class="cam-link">
-              <!-- <img class="card-img" src="{{ performer.thumb_url or performer.full_img_url }}" alt="{{ performer.name }}"> -->
-              <img class="card-img" src="{{ url_for('static', filename='images/Person on Call.webp') }}" alt="{{ performer.name }}">
+              <img class="card-img" src="{{ performer.thumb_url or performer.full_img_url }}" alt="{{ performer.name }}">
+              <!-- <img class="card-img" src="{{ url_for('static', filename='images/Person on Call.webp') }}" alt="{{ performer.name }}"> -->
             </a>
             <span class="user">
               <p><span class="live-icon">⬤</span> {{ performer.name }}, {{ performer.age }}</p>
@@ -98,8 +98,8 @@
           </div>
           <div class="about-us-img">
             <a href="{{ featured_model.chat_url }}" class="cam-link">
-              <!-- <img class="about-img" src="{{ featured_model.full_img_url }}" alt="{{ featured_model.name }}"> -->
-              <img class="about-img" src="{{ url_for('static', filename='images/Person on Call.webp') }}" alt="{{ featured_model.name }}">
+              <img class="about-img" src="{{ featured_model.full_img_url }}" alt="{{ featured_model.name }}">
+              <!-- <img class="about-img" src="{{ url_for('static', filename='images/Person on Call.webp') }}" alt="{{ featured_model.name }}"> -->
             </a>
             <div class="user">
               <p><span class="live-icon">⬤</span> {{ featured_model.name }}</p>

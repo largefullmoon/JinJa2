@@ -4,3 +4,5 @@ Werkzeug
 click
 itsdangerous
 blinker
+requests
+lxml
