@@ -4,7 +4,7 @@ from lxml import etree
 SMLIVE_URL = "http://affiliate.streamate.com/SMLive/SMLResult.xml"
 
 def get_performers(
-    max_results=10,
+    max_results=9,
     stream_type="live",
     min_age=None,
     max_age=None,
@@ -31,13 +31,21 @@ def get_performers(
         if max_age:
             age.set("Max", str(max_age))
     if ethnicity:
-        etree.SubElement(constraints, "Ethnicity").text = ethnicity
+        if isinstance(ethnicity, list):
+            for eth in ethnicity:
+                etree.SubElement(constraints, "Ethnicity").text = eth
+        else:
+            etree.SubElement(constraints, "Ethnicity").text = ethnicity
     if fetishes:
         etree.SubElement(constraints, "Fetishes").text = fetishes
     if gender:
         etree.SubElement(constraints, "Gender").text = gender
     if keyword:
-        etree.SubElement(constraints, "Keyword").text = keyword
+        if isinstance(keyword, list):
+            for kw in keyword:
+                etree.SubElement(constraints, "Keyword").text = kw
+        else:
+            etree.SubElement(constraints, "Keyword").text = keyword
 
     xml_data = etree.tostring(root, xml_declaration=True, encoding="UTF-8")
 
