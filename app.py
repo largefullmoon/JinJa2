@@ -27,7 +27,6 @@ def index():
         except (ValueError, AttributeError):
             pass  # Keep default if parsing fails
     
-    # Get ethnicity parameter
     ethnicity_list = ['Asian', 'European']  # default ethnicities
     if ethnicity_param:
         ethnicity_list = [ethnicity_param]
