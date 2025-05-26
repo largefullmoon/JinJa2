@@ -11,7 +11,8 @@ def get_performers(
     ethnicity=None,
     fetishes=None,
     gender=None,
-    keyword=None
+    keyword=None,
+    fetish=None
 ):
     # Build XML request
     root = etree.Element("SMLQuery")
